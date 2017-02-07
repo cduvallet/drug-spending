@@ -62,14 +62,14 @@ is the official non-proprietary or generic name given to a pharmaceutical substa
 British Pharmacopoeia (BP)" whereas "[United States Adopted Names](https://en.wikipedia.org/wiki/United_States_Adopted_Name) 
 are unique nonproprietary names assigned to pharmaceuticals marketed in the United States."
 
-I'm not sure of the best way to store this information (or how useful it will be), so for now these strings
-remain unparsed.
+I'm not sure of the best way to store this information (or how useful it will be), so for now the
+nomunclature strings are in the tidy data unparsed.
 
 ### Other notes
 
-*TBD whether this data includes medications covered by Part D Medicare or if it only complementary to that data.*
+- *TBD whether this data includes medications covered by Part D Medicare or if it is only complementary to that data.*
 
-Note that the individual KEGG pages (e.g. [D00903](http://www.genome.jp/dbget-bin/www_bget?dr:D00903)) 
+- Note that the individual KEGG pages (e.g. [D00903](http://www.genome.jp/dbget-bin/www_bget?dr:D00903)) 
 for these drugs have a wealth of information, including product and generic names, chemical formula, 
 additional classes, ATC codes, biochemical information, other classifications, and links to the compound 
 in other databases (e.g. PubChem, DrugBank, etc).
