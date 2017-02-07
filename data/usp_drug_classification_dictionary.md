@@ -2,14 +2,14 @@
 
 ## Data files ([available at data.world](https://data.world/data4democracy/drug-spending))
 * Raw text: `br08302.keg`
-* Tidy CSV: `usp_drug_classifications.csv`
+* Tidy CSV: `usp_drug_classification.csv`
 
 ## Link(s) to code used for scraping, tidying, etc, if applicable:
 
 Data was directly downloaded from [KEGG](http://www.genome.jp/kegg-bin/get_htext?htext=br08302.keg), 
-no scraping needed.
+(click on `Download htext` in the upper left-hand corner) no scraping needed.
 
-* `usp_drug_classification_tidying_script.py`
+* Tidying script: `usp_drug_classification_tidying_script.py`
 
 ## Data types
 * **string**: a sequence of characters
