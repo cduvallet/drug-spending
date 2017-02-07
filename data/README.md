@@ -122,3 +122,19 @@ Link to full data dictionary [in progress]
 OpenSecrets has data on lobbying transactions from pharmaceutical companies and their subsidiaries, totaled by year.
 
 Link to full data dictionary [in progress]
+
+---
+
+#### 8. USP Drug Classification -- *waiting for access to data.world to upload raw and tidy*
+
+###### Formats: text, CSV
+###### Original Source: [KEGG](http://www.genome.jp/kegg-bin/get_htext?htext=br08302.keg)
+
+The US Pharmacopeial Convention Drug Classification system. Contains category and class information on outpatient
+drugs available in the US market. TBD if data also contains information on Part D eligible
+drugs only, though it seems like it likely doesn't: "The USP DC is intended to be complementary to
+the [USP MMG](http://www.usp.org/usp-healthcare-professionals/usp-medicare-model-guidelines) and
+is developed with similar guiding principles, taxonomy, and structure of the USP Categories and Classes."
+
+Link to full data dictionary: [usp_drug_classification.md](https://github.com/Data4Democracy/drug-spending/blob/data-dictionaries/data/usp_drug_classification\
+.md)
