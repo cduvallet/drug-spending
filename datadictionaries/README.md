@@ -9,26 +9,29 @@ and field names for all our data sets. Data is housed in our [repo on data.world
 
 We're glad you asked!
 
-If you have a data source that would help with our objectives [need md version of goals statement],
+If you have a data source that would help with our [objectives](../docs/objectives.md),
 we'd be grateful to have it. Here's an overview of how to most effectively contribute. Please join
 the discussion on our [Slack channel](https://datafordemocracy.slack.com/messages/drug-spending/) -
 our group would love to work with you. (If you're not already in the Data for Democracy Slack team,
 you'll need an invitation - more info [here](https://github.com/Data4Democracy/read-this-first).)
 
 1. [Tidy the data](https://en.wikipedia.org/wiki/Tidy_data), using `lower_snake_case` for variable
-and file names.
-1. Submit a pull request to this repo with a file containing a data dictionary for your data source
-named `[datasource]_dictionary.md`; it'll be reviewed by our maintainers. We have a data dictionary
-template here [need to create a template], or you can look at our other dictionary files for
-inspiration.
+and file names and ISO format (YYYY-MM-DD) for dates.
+1. Fork this repo, if you haven't already.
+1. In either [`python/datawrangling`](../python/datawrangling) or [`R/datawrangling`](../R/datawrangling), as appropriate, add any script(s) you used to scrape, tidy, etc. (If you have multiple scripts, feel free to create a subdirectory.) Be specific when you name the scripts and directories - eg, `scrape_druglist_from_genomejp.py` is better than `drugscraping.py`.
+1. In `/datadictionaries`, add a data dictionary for your data source named `[datasource].md`. We have a [data dictionary template](TEMPLATE.md); for more specifics, check out the other dictionaries available in this folder.
+1. Submit a pull request to this repo with your data dictionary and scripts; it'll be reviewed by our maintainers.
 1. Once the PR is merged, become a contributor to our
 [repo at data.world](https://data.world/data4democracy/drug-spending) if you haven't already, then
-upload your final data set.
-1. Edit the info for each field in your data.world dataset with a detailed description. This will help other users *tremendously*.
-1. Submit a PR to update this overview file (this can be done by contributors or maintainers).
-1. Receive our grateful thanks.
+upload your final data set and label it "clean data" (click on Edit). Add a link to the data dictionary in the Description field. *(If you'd rather not join data.world, a maintainer can do this as well. It's a fun place, though!)*
+    - If you'd like to add the raw data as well (eg, XLSX files), feel free; make sure to label it "raw data."
+    - Bonus points: Edit the info for each field in your data.world dataset with a detailed description.
+1. Submit a PR to update this overview file (this can be done by you or maintainers).
+1. Receive our grateful thanks, likely including emoji.
 
 ### Overview of Currently Available Datasets
+
+All datasets are available in our [repo on data.world](https://data.world/data4democracy/drug-spending). If individual datasets can be queried, direct links are included.
 
 ---
 
@@ -48,7 +51,12 @@ available in both .csv and .feather format; these are titled, for example, `spen
 We also have a `feather` file containing solely the unique brand names + generic names included in
 all five years of data (`drugnames.feather`).
 
-Link to full data dictionary [need link - Matt will cover this]
+Links to full data dictionaries:
+[2011](part-d_spending_2011.md)
+[2012](part-d_spending_2012.md)
+[2013](part-d_spending_2013.md)
+[2014](part-d_spending_2014.md)
+[2015](part-d_spending_2015.md)
 
 ---
 
@@ -63,7 +71,7 @@ Link to full data dictionary [in progress]
 
 ---
 
-#### 3. FDA-Approved Drugs (can't get DW query link to go anywhere? will check in on this later)
+#### 3. FDA-Approved Drugs
 
 ###### Formats: JSON
 ###### Original Source: [Center Watch](http://www.centerwatch.com/drug-information/fda-approved-drugs/therapeutic-areas)
@@ -85,16 +93,16 @@ Link to full data dictionary [in progress]
 
 ---
 
-#### 5. [Cleaned drug data](https://data.world/data4democracy/drug-spending/query/?query=--+drugdata_clean.csv%2Fdrugdata_clean+%28drugdata_clean.csv%29%0ASELECT+%2A+FROM+%60drugdata_clean.csv%2Fdrugdata_clean%60+LIMIT+5000)
+#### 5. [Cleaned manufacturer data](https://data.world/data4democracy/drug-spending/query/?query=--+drugdata_clean.csv%2Fdrugdata_clean+%28drugdata_clean.csv%29%0ASELECT+%2A+FROM+%60drugdata_clean.csv%2Fdrugdata_clean%60+LIMIT+5000)
 
 ###### Formats: CSV
 ###### Original Source: CMS.gov
 
-I'll need Stephanie to write this one!
+This dataset contains the information you'd need to link specific drugs and their dosages to the manufacturer - helpful for creating a path from Medicaid spending to lobbying efforts. Brand name and generic or descriptive names are both offered, as well as dosage and package size. Further, there are identifying codes for each drug (HCPCS and NDC).
 
 ---
 
-#### 6. Medical Expenditure Panel Survey *(too large to query; stored on DW)*
+#### 6. Medical Expenditure Panel Survey *(too large for direct query link)*
 
 ###### Formats: zip, CSV, feather
 ###### Original Source: meps.ahrq.gov
@@ -116,15 +124,15 @@ Link to full data dictionary [in progress]
 
 ---
 
-#### 8. USP Drug Classification -- *waiting for access to data.world to upload raw and tidy*
+#### 8. [USP Drug Classification](https://data.world/data4democracy/drug-spending/query/?query=--+usp_drug_classification.csv%2Fusp_drug_classification+%28usp_drug_classification.csv%29%0ASELECT+%2A+FROM+%60usp_drug_classification.csv%2Fusp_drug_classification%60)
 
 ###### Formats: text, CSV
-###### Original Source: [KEGG](http://www.genome.jp/kegg-bin/get_htext?htext=br08302.keg)
+###### Original Source: [KEGG](http://www.genome.jp/kegg-bin/get_htext?htext=br08302.keg) ("USP drug classification" in the drop-down menu)
 
 The US Pharmacopeial Convention Drug Classification system. Contains category and class information on outpatient
 drugs available in the US market. TBD if data also contains information on Part D eligible
-drugs only, though it seems like it likely doesn't: "The USP DC is intended to be complementary to 
-the [USP MMG](http://www.usp.org/usp-healthcare-professionals/usp-medicare-model-guidelines) and 
+drugs only, though it seems like it likely doesn't: "The USP DC is intended to be complementary to
+the [USP MMG](http://www.usp.org/usp-healthcare-professionals/usp-medicare-model-guidelines) and
 is developed with similar guiding principles, taxonomy, and structure of the USP Categories and Classes."
 
-Link to full data dictionary: [usp_drug_classification.md](https://github.com/Data4Democracy/drug-spending/blob/data-dictionaries/data/usp_drug_classification.md)
+Link to full data dictionary: [usp_drug_classification_dictionary.md](usp_drug_classification_dictionary.md)
