@@ -135,4 +135,4 @@ drugs only, though it seems like it likely doesn't: "The USP DC is intended to b
 the [USP MMG](http://www.usp.org/usp-healthcare-professionals/usp-medicare-model-guidelines) and
 is developed with similar guiding principles, taxonomy, and structure of the USP Categories and Classes."
 
-Link to full data dictionary: [usp_drug_classification_dictionary.md](usp_drug_classification_dictionary.md)
+Link to full data dictionary: [usp_drug_classification.md](usp_drug_classification.md)
